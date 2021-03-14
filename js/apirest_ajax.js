@@ -50,7 +50,7 @@ const getAll = () => {
 
                 $template.querySelector(".edit").dataset.id = element.id;  //Para acceder a los data attributes se pone dataset. luego va el nombre del nuevo data attribute
                 $template.querySelector(".edit").dataset.name = element.nombre;
-                $template.querySelector(".edit").dataset.constellation = element.constelacion 
+                $template.querySelector(".edit").dataset.constellation = element.constelacion; 
                 
                 $template.querySelector(".delete").dataset.id = element.id;
 
@@ -75,7 +75,7 @@ d.addEventListener("submit", e => {
     if (e.target === $form) {
         //Prevenir el comportamiento por defecto que tiene el envío del formulario que es detener la ejecución porque será a través de ajax 
         e.preventDefault();
-        //Si el elemento id está vacío
+        //Si el elemento id está vacío osea no ha sido creado
         if(!e.target.id.value){
             //POST - CREATE
             ajax({
@@ -107,10 +107,10 @@ d.addEventListener("submit", e => {
 });
 
 d.addEventListener("click", e => {
-    //Cuando el objeto que origina el evento es .edit. Ahora el e.target es el boton
+    //Si el objeto que origina el evento es un boton con clase .edit. Ahora el e.target es el boton
     if (e.target.matches(".edit")) {
         $title.textContent = "Editar Santo";
-        $form.nombre.value = e.target.dataset.name;
+        $form.nombre.value = e.target.dataset.name; //En los inputs poner los valores del data attribute del boton
         $form.constelacion.value = e.target.dataset.constellation;
         $form.id.value = e.target.dataset.id;
     }

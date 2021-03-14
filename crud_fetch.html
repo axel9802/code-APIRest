@@ -22,7 +22,7 @@
         </article>
         <article>
             <h2>Ver Santos</h2>
-            <table id="crud-table">
+            <table class="crud-table">
                 <thead>
                     <tr>
                         <th>Nombre</th>
@@ -45,14 +45,16 @@
     </section>
 
     <template id="crud-template">
-        <td class="name"></td>
-        <td class="constellation"></td>
-        <td>
-            <button class="edit">Editar</button>
-            <button class="delete">Eliminar</button>
-        </td>
+        <tr>
+            <td class="name"></td>
+            <td class="constellation"></td>
+            <td>
+                <button class="edit">Editar</button>
+                <button class="delete">Eliminar</button>
+            </td>
+        </tr>
     </template>
 
-    <script src="js/apirest.js"></script>
+    <script src="js/apirest_fetch.js"></script>
 </body>
 </html>
